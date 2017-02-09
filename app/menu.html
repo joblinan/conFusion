@@ -13,7 +13,7 @@
             		<ul class="media-list tab-pane fade in active">
 						<li class="media" ng-repeat="dish in dishes | filter:filtText">
 							<div class="media-left media-middle">
-								<a href="#"><img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthapizza" ></a>
+								<a href="#/menu/{{dish._id}}"><img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthapizza" ></a>
 							</div>
 							<div class="media-body">
 								<h2 class="media-heading">{{dish.name}} <span class="label label-danger">{{dish.label}}</span> <span class="badge">{{dish.price | currency}}</span></h2>
