@@ -1,62 +1,63 @@
 'use strict';
 
 angular.module('confusionApp', ['ui.router'])
-.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-        .state('app', {
-            url: '/',
-            views: {
-                'header': {
-                    templateUrl: 'views/header.html'
-                },
-                'content': {
-                    template: '<h1>To be Completed.</h1>',
-                    controller: 'IndexController'
-                },
-                'footer': {
-                    templateUrl: 'views/footer.html'
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('app', {
+                url: '/',
+                views: {
+                    'header': {
+                        templateUrl: 'views/header.html'
+                    },
+                    'content': {
+                        templateUrl: 'views/home.html',
+                        controller: 'IndexController'
+                    },
+                    'footer': {
+                        templateUrl: 'views/footer.html'
+                    }
                 }
-            }
-        })
-    
-        .state('app.aboutus', {
-            url: 'aboutus',
-            views: {
-                'content@': {
-                    template: '<h1>To be Completed.</h1>'
+            })
+
+            .state('app.aboutus', {
+                url: 'aboutus',
+                views: {
+                    'content@': {
+                        templateUrl: 'views/aboutus.html',
+                        controller: 'AboutController'
+                    }
                 }
-            }
-        })
-    
-        .state('app.contactus', {
-            url: 'contactus',
-            views: {
-                'content@': {
-                    templateUrl: 'views/contactus.html',
-                    controller: 'ContactController'
+            })
+
+            .state('app.contactus', {
+                url: 'contactus',
+                views: {
+                    'content@': {
+                        templateUrl: 'views/contactus.html',
+                        controller: 'ContactController'
+                    }
                 }
-            }
-        })
-    
-        .state('app.menu', {
-            url: 'menu',
-            views: {
-                'content@': {
-                    templateUrl: 'views/menu.html',
-                    controller: 'MenuController'
+            })
+
+            .state('app.menu', {
+                url: 'menu',
+                views: {
+                    'content@': {
+                        templateUrl: 'views/menu.html',
+                        controller: 'MenuController'
+                    }
                 }
-            }
-        })
-    
-        .state('app.dishdetails', {
-            url: 'menu/:id',
-            views: {
-                'content@': {
-                    templateUrl: 'views/dishdetail.html',
-                    controller: 'DishDetailController'
+            })
+
+            .state('app.dishdetails', {
+                url: 'menu/:id',
+                views: {
+                    'content@': {
+                        templateUrl: 'views/dishdetail.html',
+                        controller: 'DishDetailController'
+                    }
                 }
-            }
-        });
-    
-        $urlRouterProvider.otherwise('/');
-});
+            });
+
+            $urlRouterProvider.otherwise('/');
+    });
